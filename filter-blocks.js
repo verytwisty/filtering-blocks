@@ -76,6 +76,7 @@ function modifyInspectorControls(BlockEdit) {
 
     return props => {
 
+
       if ( ! modifyTheseBlocks.includes( props.name ) ) return <BlockEdit {...props} />;
 
       return (
@@ -99,6 +100,9 @@ function modifyInspectorControls(BlockEdit) {
 }
 
 function modifyCodeSaveSettings(el, block, attributes) {
+
+    let modifyTheseBlocks = includedBlocksArray();
+
   if (! modifyTheseBlocks.includes( block.name ) && attributes.lightText) {
     el.props.className = classnames( el.props.className, {
       "has--light-text": attributes.lightText
